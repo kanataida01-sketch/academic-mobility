@@ -28,6 +28,26 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Create index.html for GitHub Pages
+        run: |
+          JS=$(basename .output/public/assets/index-*.js)
+          CSS=$(basename .output/public/assets/styles-*.css)
+          cat <<EOF > .output/public/index.html
+          <!doctype html>
+          <html lang="ru">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Academic Mobility</title>
+              <link rel="stylesheet" href="./assets/$CSS" />
+            </head>
+            <body>
+              <div id="root"></div>
+              <script type="module" src="./assets/$JS"></script>
+            </body>
+          </html>
+          EOF
+          cp .output/public/index.html .output/public/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
