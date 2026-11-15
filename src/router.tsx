@@ -15,6 +15,3 @@ export const getRouter = () => {
 
   return router;
 };
-```[cite: 15]
-
-*Проверка:* параметр `basepath: "/academic-mobility"` передан в объект настроек внутри `createRouter({ ... })` (без слэша на конце)[cite: 15].
