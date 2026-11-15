@@ -10,6 +10,3 @@ export default defineConfig({
     server: { entry: "server" },
   },
 });
-```[cite: 16]
-
-*Проверка:* свойство `base: "/academic-mobility/"` находится внутри `vite: { ... }`, а блок `tanstackStart` сохранён без изменений[cite: 16].
