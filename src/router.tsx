@@ -7,6 +7,7 @@ export const getRouter = () => {
 
   const router = createRouter({
     routeTree,
+    basepath: "/academic-mobility",
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
@@ -14,3 +15,6 @@ export const getRouter = () => {
 
   return router;
 };
+```[cite: 15]
+
+*Проверка:* параметр `basepath: "/academic-mobility"` передан в объект настроек внутри `createRouter({ ... })` (без слэша на конце)[cite: 15].
